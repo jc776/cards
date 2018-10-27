@@ -1,0 +1,9 @@
+node_modules/
+target/
+.nrepl-port
+
+.lein-repl-history
+.shadow-cljs/
+
+# :^)
+package-lock.json
