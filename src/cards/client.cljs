@@ -1,13 +1,20 @@
 (ns cards.client
-  (:require [taoensso.timbre :as t]))
+  (:require
+    [cards.client.events] ;; rf register
+    [cards.client.subs] ;; rf register
+    [cards.client.views :as views]
+    [reagent.core :as r]
+    [re-frame.core :as rf]
+    [taoensso.timbre :as t]))
 
 (defn render []
-  (println "render"))
+  (r/render [views/app] (.getElementById js/document "app")))
 
 (defn ^:export main []
   (t/info "Hello")
-  ;; init
+  (rf/dispatch [:init-db])
   (render))
+
 
 (defn ^:dev/after-load reload []
   (t/info "Reload")

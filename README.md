@@ -5,10 +5,9 @@ $ npm install
 $ npx shadow-cljs server
 # terminal 2 or your editor
 $ lein repl :connect 3333
-# build cljs
-user=> (shadow/watch :app)
-# start server (localhost:8080)
 user=> (mount/start)
+# - cards.server/server - server on port 8080
+# - user/cljs - reload frontend on save
 # e.g. cljs repl, once browser is open
 user=> (shadow/nrepl-select :app)
 cljs.user=> (js/alert "Hello!")

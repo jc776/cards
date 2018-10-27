@@ -13,4 +13,5 @@
                                   [reagent "0.8.1"]
                                   [re-frame "0.10.6"]
                                   ;; dev
-                                  [proto-repl "0.3.1"]]}})
+                                  [proto-repl "0.3.1"]
+                                  [com.cemerick/pomegranate "1.1.0"]]}})

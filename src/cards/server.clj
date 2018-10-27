@@ -1,5 +1,6 @@
 (ns cards.server
-  (:require [compojure.core :refer [defroutes GET]]
+  (:require [cards.server.ws :as ws]
+            [compojure.core :refer [defroutes GET]]
             [compojure.route :as route]
             [ring.util.response :as resp]
             [org.httpkit.server :as http]
@@ -9,8 +10,7 @@
 (defroutes app
   (GET "/" []
     (resp/content-type (resp/resource-response "index.html" {:root "public"}) "text/html"))
-  #_(GET "/ws" []
-      (websocket-handler events/rx))
+  (GET "/ws" [] ws/ws-handler)
   (route/resources "/")
   (route/not-found "<h1>Page not found</h1>"))
 
