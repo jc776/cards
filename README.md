@@ -1,3 +1,8 @@
+# Cards
+- http-kit server
+- re-frame client, a single "username/pass" screen
+- websocket connection, send/receive `[:login "name" "pass"]`
+
 ## Dev
 ```bash
 $ npm install
